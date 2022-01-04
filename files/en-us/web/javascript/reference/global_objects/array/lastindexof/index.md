@@ -30,13 +30,13 @@ lastIndexOf(searchElement, fromIndex)
 - `searchElement`
   - : Element to locate in the array.
 - `fromIndex` {{optional_inline}}
-  - : The index at which to start searching backwards. Defaults to the array's length
-    minus one (`arr.length - 1`), i.e. the whole array will be searched. If the
-    index is greater than or equal to the length of the array, the whole array will be
-    searched. If negative, it is taken as the offset from the end of the array. Note that
-    even when the index is negative, the array is still searched from back to front. If
-    the calculated index (`arr.length + fromIndex`) is less than 0, -1 is returned, i.e. the array will not be
-    searched.
+  - : The position in the array at which to start searching backwards. Defaults to the array's length minus one (`arr.length - 1`), causing the whole array to be searched.
+
+    A `fromIndex` value greater than or equal to the length of the array also causes the whole array to be searched. (In this case, you can think of it conceptually as causing the method to start its search at a nonexistent position beyond the end of the array, but to then go backwards from there looking for the real end position of the array, at which point it starts searching backwards through the actual array elements.)
+
+    A `fromIndex` value greater than 0 is taken as the offset from the beginning of the array.
+
+    A `fromIndex` value less than 0 is taken as the offset from the end of the array — in other words, it is taken as specifying the position at `array.length + fromIndex`. Therefore, if `array.length + fromIndex` is less than 0, the array is not searched, and the method returns -1. (In this case, because `fromIndex` specifies a nonexistent position before the beginning of the array, you can think of it conceptually as causing the method to start its search at that nonexistent position and to then go backwards from there looking for array elements, which it never finds.)
 
 ### Return value
 
