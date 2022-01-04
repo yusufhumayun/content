@@ -20,7 +20,8 @@ Like HTML, CSS is not a programming language. It's not a markup language either.
 
 ```css
 p {
-  color: red;
+  color: blue;
+  
 }
 ```
 
